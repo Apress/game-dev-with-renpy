@@ -1,0 +1,29 @@
+{
+	"version":"Sample 1.0.0",
+	"model":"model.moc",
+	"textures":[
+		"Nasuka/texture_00.png",
+		"Nasuka/texture_01.png",
+		"Nasuka/texture_02.png"
+	],
+	"motions":{
+		"idle":[
+			{"file":"motions/idle.mtn"}
+		],
+		"":[
+			{"file":"motions/pleased.mtn"},
+			{"file":"motions/laugh.mtn"},
+			{"file":"motions/hunh.mtn"},
+			{"file":"motions/disagree.mtn"},
+			{"file":"motions/nod.mtn"},
+			{"file":"motions/shake_01.mtn"},
+			{"file":"motions/shake_02.mtn"},
+			{"file":"motions/talk_01.mtn"},
+			{"file":"motions/talk_02.mtn"},
+			{"file":"motions/talk_03.mtn"},
+			{"file":"motions/talk_04.mtn"},
+			{"file":"motions/talk_05.mtn"}
+		]
+	},
+	"physics":"embed://Sample Physics.json"
+}

@@ -1,0 +1,315 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c0;}
+\paperw16840\paperh23820\margl1440\margr1440\vieww20000\viewh16360\viewkind0
+\deftab720
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f0\fs26\fsmilli13330 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!-- This is a proofing copy of Taking Back August, Part III for Twine -->\
+<!-- A tutorial game by Robert Ciesla to demonstrate the basic mechanics of the software -->\
+<!-- From "Game Development with Ren'Py: Introduction to Visual Novel Games Using Ren'Py, TyranoBuilder, and Twine" -->\
+<!-- Published by Apress in 2019 -->\
+<!-- Passages are designated in bold -->\
+
+\f1\b \
+Start
+\fs37\fsmilli18667 \
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f0\b0\fs26\fsmilli13333 \cf2 <div style="color:#fff"><b>TAKING BACK AUGUST, PART III</b></div><div style="color:#ff0">A Tutorial Game by Robert Ciesla</div>\
+\pard\pardeftab720\sl533\partightenfactor0
+\cf2 Only a mere minute or so later, the old mobile phone rings. "Raine?", you utter, answering the call. "You met with Honeybun. Good. Yes, it's me, [[Raine]]", a female voice explains.\
+\
+(set: $variable to 0)\
+(set: $items to (a:))\
+(set: $show_footer to true)\
+(set: $items to $items + (a: "Pink DVD"))\
+\
+
+\f1\b Raine\
+
+\f0\b0 She te
+\f1\b l
+\f0\b0 ls you you must ditch the [[phone]] as it's being tracked by "them": its signal encryption will be compromised shortly. \
+\
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f1\b\fs26\fsmilli13333 \cf3 \outl0\strokewidth0 phone
+\f0\b0\fs26\fsmilli13333 \cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl533\partightenfactor0
+\cf2 Raine also tells you if the "overalls man" finds you now, the entirety of Britain and later the rest of Europe are in jeopardy.<br>\
+You're given a new set of coordinates and told you're guaranteed complete safety in this new (if: $variable < 3)[[[location.|location]]]\
+(else:)[[[Time to move.|Moving]]]\
+\
+
+\f1\b location
+\f0\b0 \
+(if: $variable is 0) [You are quite curious about the location.]\
+(if: $variable is 1) [You are still very curious about the location.]\
+(if: $variable is 2) [You feel like actually visiting this location!]\
+(set: $variable += 1)\
+(link: "It's all a grand mystery.")[(go-to:"phone")]\
+\
+
+\f1\b Moving
+\f0\b0 \
+You drop the phone and embark on the trip right away. A rather complicated three-day journey on trains, ferries, and fishing boats eventually take you to Bouvet Island, Norway, the most remote [[island]] on the planet.\
+\
+
+\f1\b island
+\f0\b0 \
+A human figure welcomes you as you make landfall in a blizzard. Taking off his goggles, the host becomes recognizable: it's <b>Mervyn Popplewell</b>, your supposedly dead former colleague. He shakes your gloved hand and says "Welcome to Bouvet Island, or limbo as I call it!"\
+\
+
+\f1\b inventory
+\f0\b0 \
+Go to [[bunker room A]], [[bunker room B]], [[bunker room C]], or [[bunker room D]].\
+(if: $show_footer is true)[\
+<hr>\
+(if: $items's length > 0)[Your inventory contains a (print: $items.join(", ")).]\
+(else:)[Your inventory is empty.]\
+\
+(if: $items contains "USB-stick" and "Programming Manual" and "Password on a Piece of Paper")[You're ready to get to work at the bunker [[computer]].]\
+]\
+\
+
+\f1\b bunker room A
+\f0\b0 \
+This room is exceptionally cold.\
+(if: $items contains "USB-stick")[The room is empty.]\
+(else:)[You find a USB-stick!(set: $items to $items + (a: "USB-stick"))]\
+\
+Go to [[bunker room B]], [[bunker room C]], or [[bunker room D]].\
+\
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f1\b\fs26\fsmilli13333 \cf3 \outl0\strokewidth0 bunker room B
+\f0\b0 \cf3 \
+This room is quite barren. \
+(if: $items contains "Programming Manual")[The room is empty.]\
+(else:)[You find a Programming Manual!(set: $items to $items + (a: "Programming Manual"))]\
+\
+Go to [[bunker room A]], [[bunker room C]], or [[bunker room D]].\
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f1\b\fs26\fsmilli13333 \cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl533\partightenfactor0
+\cf2 bunker room C
+\f0\b0 \
+The room is cold and empty. \
+\
+Go to [[bunker room A]], [[bunker room B]], or [[bunker room D]].\
+\
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f1\b\fs26\fsmilli13333 \cf3 \outl0\strokewidth0 bunker room D
+\f0\b0 \cf3 \
+(if: $items contains "Password on a Piece of Paper")[The room is empty.]\
+(else:)[You find a Password on a Piece of Paper!(set: $items to $items + (a: "Password on a Piece of Paper"))]\
+\
+Go to [[bunker room A]], [[bunker room B]], or [[bunker room C]].
+\fs26\fsmilli13333 \cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl533\partightenfactor0
+\cf2 \
+
+\f1\b computer
+\f0\b0 \
+You must make sure the Faction never gets the backdoors they want in August, the Britain-wide firewall-to-be. If they get them, they can infuse pretty much every electronic device with malicious code that will render the entire country vulnerable for attack.\
+ \
+ "You must make modifications so after implementing them, not even you can undo them", Mervyn explains.\
+<!-- Clear inventory -->\
+ (set: $items to (a:))\
+ \
+ [[Finish Code]]\
+\
+
+\f1\b Finish Code
+\f0\b0 \
+After a mere two days in the bunker, it begins to feel a second home to you. The outside world is dangerous, unpredictable. Food delivery is provided weekly to the island by the British government, including items like caviar, avocado with shrimp, and Belgian waffles. \
+<br>You've found home.\
+<!-- Time to enchant a food item -->\
+(enchant: "avocado with shrimp", (text-colour: white) + (text-style:'bold'))\
+(display: "Food")\
+[[Fall Asleep]]\
+\
+
+\f1\b Food
+\f0\b0 \
+(Your favorite food is, indeed, avocado with shrimp!)\
+\
+
+\f1\b Fall Asleep
+\f0\b0 \
+<!-- Define a datamap with two keys (temperature and energy) and assign them with values -->\
+(set: $info to (datamap: "temperature", -20, "energy", 5))\
+<!-- Display the datamap structures -->\
+Note: your energy-level is (print: $info's energy) out of 10. The current temperature is (print: $info's temperature) C.\
+<!-- Check the values of the keys and display messages if appropriate -->\
+(if: $info's energy is < 10)[You are somewhat tired.]\
+(if: $info's temperature is > 10)[It is quite warm!]\
+(else:)[It is very cold!]<br>\
+During your third day on the island, you're startled by a noise. At first it seemed to be coming somewhere inside the bunker, but it soon became clear it's originating from the surrounding sea.\
+<!-- Create a new inventory with a dataset -->\
+(set: $briefcase to (dataset: "pencil", "eraser"))\
+<!-- Examine contents of the aforementioned dataset using "is in" and "contains" -->\
+(if: "pencil" is in $briefcase)[You have your trusty pencil in your trusty briefcase.]\
+(if: "alarmclock" is in $briefcase)[You are also carrying an alarm clock in your briefcase.]\
+(if: $briefcase contains "eraser")[You are also carrying an eraser in said briefcase.]\
+(if: $briefcase contains "eraser" and $briefcase contains "pencil")[You feel well prepared.]\
+[[Go outside.]]\
+(set: $show_footer to false) <!-- Hide inventory -->\
+\
+
+\f1\b Go outside.
+\f0\b0 \
+You pinpoint the source of the noise and associate it with a small orange dot in the horizon. It's obviously a boat of some sorts, slowly making it way towards Bouvet Island.\
+<!-- Create a new array, $array, assign four strings into it, and randomize its order -->\
+(set: $array to (shuffled: "escape", "pencils", "fish", "August"))\
+Panicking, you are thinking about (print: $array)!\
+<!-- Create another array, assign four numbers, rotate the array by two -->\
+(set: $numbers to (a: 1,4,5,8))\
+And your briefcase lock number.. Which was it: (print: $numbers) or(set: $numbers to (rotated: 2, ...$numbers)) (print: $numbers)?\
+<!-- Create a new array, fill it with four strings, arrange them alphabetically -->\
+(set: $bands to (a: 'Abba', 'Megadeth', 'Tiffany', 'Enya'))\
+It's times like these you think about your favorite bands: (print: (sorted: ...$bands)).\
+[[Hide in the bunker!]]\
+\
+
+\f1\b Hide in the bunker!
+\f0\b0 \
+The craft makes contact with terra firma. You can do little else but observe through the fortified bunker windows. After a few minutes of nothing but howling wind a somewhat petite female form strolls towards your residence. She wears (either: "thick black rimmed", "hipster") glasses and a (either: "dark blue", "chic") winter jacket. \
+\
+There's a knock on the entrance. "Reginald, it's me, <b>Raine</b>", she informs and continues, "We must leave now. We only have (random: 10,20) seconds!"\
+\
+[[Enter the hovercraft.]]\
+\
+
+\f1\b Enter the hovercraft.
+\f0\b0 \
+(text-style: "Shudder")[Now aboard the craft and scurrying across the waves, you and Raine notice a second hovercraft emerging from the mist. "It's them", Raine tells you.]<br>\
+(text-style: "Rumble")[The black Faction craft is soon on the starboard side of her and you with more than a dozen of their stocky troopers aboard, wearing thick layers of arctic clothing and military boots.]\
+(text-style: "Shudder")[(text-style: "Smear")[You and Raine back off inside the craft canopy as it gets overrun.]]<br>\
+<!-- Apply an effect to a specific section in a passage (i.e. [beg] and [ins]) -->\
+(set: $string to (text-style: "Shudder")) The heavily reinforced cabin door $string[beg]$string[ins] to [[come off its hinges]].\
+\
+
+\f1\b come off its hinges
+\f0\b0 \
+The antagonists are about to break through the cabin door.\
+\
+[[Stay put!]] / [[Open the Door!]]\
+(set: $time to 15)\
+(set: $string to (text-style: "Shudder"))\
+(set: $string2 to (text-style: "Rumble"))\
+<!-- Display dramatic messages every 0.8 seconds-->\
+\{(live: 0.8s)[\
+    (either: "","","Double ")\
+    (either: "$string[Thump!]", "Wham!", "Yikes!", "Oof!", "$string2[Bam!]")\
+]\}You have |amount>[$time] seconds left!\
+(live: 1.0s)[\
+	(set: $time to it - 1)\
+	(if: $time is 0)[(go-to: "Open the Door!")]\
+	(replace: ?amount)[$time]\
+]\
+\
+
+\f1\b Stay put!
+\f0\b0 \
+(set: $hose to 100)\
+A stream of water begins to flood the hovercraft cabin from the skies. It's much more intense than seaspray or rain. \
+\
+You identify the emerging sound as a helicopter. "It's Roy", Raine yells and continues, "It has to be him!" \
+\
+Royston is almost done removing the bad guys off the hovercraft:\
+ (live: 0.25s)[\
+ (if: $hose>0)[\
+ (set: $hose to $hose - (random: 1,5))\
+ ]\
+(print: '<progress value="' + (text: $hose) + '" max="100"></progress>')\
+ (if: $hose < 10)[ [[Follow Roy's helicopter!]]] \
+	 ]\
+\
+
+\f1\b Open the Door!
+\f0\b0 \
+(set: $show_footer to false)\
+\
+ You open the door in an attempt to fight the intruders. You are overrun in seconds.\
+ (live: 3s)[\
+        (stop:)\
+		(text-style: "Outline")[<h1>GAME OVER</h1>]\
+        (link:"Try, Try Again")[(goto:"Start")]\
+     ]\
+\
+
+\f1\b Follow Roy's helicopter!
+\f0\b0 \
+The hovercraft makes landfall somewhere in the coast of Norway. An unremarkable car awaits you, Raine, and Royston. "There's a private jet awaiting for us at Oslo Airport. Let's get going", Royston says, opening a passenger door.\
+\
+Picking up a newspaper in the car, a headline startles you:\
+(transition: "pulse") [\
+(text-style: "emboss")[\
+<h2>(text-style: "smear")[(text-rotate: 2)["Buckingham Palace and Number Ten on lockdown!"]</h2>\
+(text-rotate: -2)["Britain shocked by PM's disappearance!"]]\
+]\
+Finish reading the [[newspaper]] ]\
+\
+
+\f1\b newspaper
+\f0\b0 \
+Your team arrives in London after another long drive, this time from Heathrow. "We have snipers all over the place", Royston says. \
+\
+The Faction managed to enter Buckingham Palace which has its surrounding areas sealed off from the public for now.\
+\
+Proceed Inside..\
+(click-replace: "Proceed Inside..")[(display: "Buckingham Court")]\
+\
+
+\f1\b Buckingham Court
+\f0\b0 \
+A duo of Faction operatives open the doors to Buckingham Palace. Raine and Reginald are kept a careful eye on as they enter the premises after being searched for weapons of any kind. \
+\
+Inside, an absolute silence makes every footstep sound like a hundred decibels. \
+\
+(link-goto: "Enter the Throne Room", "Throne Room") \
+\
+
+\f1\b Throne Room
+\f0\b0 \
+(set: $password="")\
+Our friends are escorted into the Throne Room, where two familiar faces await them: it's Claire from the train and her bodyguard, the overalls man. \
+\
+Claire informs them the Faction still wants the code for the backdoor to August. \
+\
+"Failure to do so will result in two things: the execution of your prime minister and a massive electromagnetic pulse which will cripple not only your capital city, but the entirety of your country", Claire explains.\
+\
+> Enter password.(click: "password")[\
+(put: (prompt: "Enter Your Password (it's reginald):", "") into $password)\
+(if: $password is "reginald")[(goto: "Done")](else:)[(text-style: "blink")[> Access denied!](link-goto: "> Try again? <", "Throne Room")\
+]\
+]\
+\
+
+\f1\b Done
+\f0\b0 \
+You activate the system with all of the requested backdoors open - or so it seems.\
+\
+"Very good, Mr Pennelegion", Claire says with a smile, grabbing the tablet from Reginald and handing it over to the overalls man. \
+"Excellent. We have a deal. The coordinates are now being transferred into your tablet", she says and continues: "You're free to leave".\
+\
+Walking slowly towards the front doors, Raine notices something in the corner of her eye: one of the guards is having difficulty maintaining his balance. The air turns freezing cold. \
+\
+Raine whispers to you: "Do you feel that? That's our cue to [[run!]]"\
+\
+
+\f1\b run!
+\f0\b0 \
+"We fumigated the palace air conditioning with our special blend: iodine and liquid nitrogen mist. Their Achille's heel, Reg", Raine says and adds, "An SAS team is on its way to get our prime minister. We expect him back in less than an hour.." \
+(live: 3s)[(stop:)(transition: "Shudder") [(text-style: "Smear")[<h1>THE END</h1>](link:"Re-Start")[(goto:"Start")]]]\
+<audio controls autoplay>\
+<source src="https://archive.org/download/RelaxingHarpMusicSleepMusicMeditationMusicSpaMusicStudyMusicInstrumentalMusic49_201807/Relaxing%20Harp%20Music%20Sleep%20Music%2C%20Meditation%20Music%2C%20Spa%20Music%2C%20Study%20Music%2C%20Instrumental%20Music%20%E2%98%8549.mp3" type="audio/mp3">\
+Your browser does not support the audio element.\
+</audio>\
+}

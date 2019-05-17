@@ -1,0 +1,132 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw16840\paperh23820\margl1440\margr1440\vieww16280\viewh9000\viewkind0
+\deftab720
+\pard\pardeftab720\sl533\partightenfactor0
+
+\f0\fs26\fsmilli13330 \cf2 \expnd0\expndtw0\kerning0
+/* This is the CSS-stylesheet for Taking Back August, Part III for Twine\
+A tutorial game by Robert Ciesla to demonstrate the basic mechanics of the software\
+From "Game Development with Ren'Py: Introduction to Visual Novel Games Using Ren'Py, TyranoBuilder, and Twine"\
+Published by Apress in 2019 */\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Main passage style. Sets up font, font color, shadow for text, and a background gradient */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 body, tw-story\
+\{\
+  font-family: Courier New;\
+  font-size: 22px;\
+  color: #EE9900; \
+  text-shadow: 1px 1px 1px #000000;\
+  background: rgb(194,169,45);\
+  background: linear-gradient(180deg, rgba(194,169,45,1) 0%, rgba(110,71,71,1) 31%, rgba(0,0,0,1) 86%, rgba(127,117,117,1) 100%);\
+\} \
+\
+tw-link /* Set both base link colors */\
+\{ color: #ffcc00; \}\
+tw-link:hover /* Set both hover link colors */\
+\{ color: #ffff00; \}\
+.visited /* Visited links */\
+\{ color: #ffcc00; \}\
+.visited:hover /* Visited hover links */\
+\{ color: #ffff00; \}\
+\
+/* Style for the tag "snow" */\
+/* This style uses a live background image from wikipedia.org */\
+\
+tw-story[tags~="snow"] \{\
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/4/44/Bouvet_island_0.jpg");\
+  background-size: cover;\
+  color: ivory;\
+\}\
+\
+tw-story[tags~="snow"] tw-link \{\
+  color: ivory;\
+  \}\
+tw-story[tags~="snow"] tw-link:hover \{\
+  color:white;\
+  \}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the tag "snow2" */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-story[tags~="snow2"] \{\
+  color: ivory;\
+  background: rgb(34,193,195);\
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(157,157,157,1) 100%);\
+\}\
+\
+tw-story[tags~="snow2"] tw-link \{\
+  color:#444;\
+  \}\
+tw-story[tags~="snow2"] tw-link:hover \{\
+  color:white;\
+  \}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the tag "bunker" */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-story[tags~="bunker"] \{\
+  color: white;\
+background: rgb(46,46,46);\
+background: linear-gradient(0deg, rgba(46,46,46,1) 0%, rgba(157,157,157,1) 100%);\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the tag "hovercraft" */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-story[tags~="hovercraft"] \{\
+  color: white;\
+background: rgb(28,142,118);\
+background: linear-gradient(0deg, rgba(28,142,118,1) 0%, rgba(157,157,157,1) 100%);\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the tag "bham" i.e. Buckingham */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-story[tags~="bham"] \{\
+  color: cornsilk;\
+background: rgb(110,71,71);\
+background: linear-gradient(180deg, rgba(110,71,71,1) 20%, rgba(224,230,125,1) 100%);\
+\}\
+\
+tw-story[tags~="bham"] tw-link \{\
+  color:peru;\
+  \}\
+tw-story[tags~="bham"] tw-link:hover \{\
+  color:wheat;\
+  \}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the tag "finale" */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-story[tags~="finale"] \{\
+  color: white;\
+background: rgb(2,0,36);\
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 35%, rgba(0,0,0,1) 100%);\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for the live countdown reading in the passage "come off its hinges" */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 tw-hook[name="amount"] \{\
+	color: darkorange;\
+  font-weight: bold;\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 /* Style for a custom progress-bar */\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 progress \{ \
+    background-size: 20px 20px, 100% 100%, 100% 100%; \
+    box-shadow: 5px 5px 5px black;\
+\}\
+\
+\
+\
+\
+}
